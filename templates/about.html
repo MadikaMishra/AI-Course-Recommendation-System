@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block title %}About Us | FlaskProject{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="about-title">About Us</div>
+    <div class="about-subtitle">Modern Solutions. Unique Approach. Professional Results.</div>
+    <div class="about-content">
+        Welcome to <strong>FlaskProject</strong>! We are a passionate team dedicated to building innovative web solutions that empower businesses and individuals. Our mission is to blend creativity, technology, and professionalism to deliver exceptional digital experiences.
+        <br><br>
+        With a focus on modern design and robust development, we ensure every project is unique and tailored to our clients' needs. From startups to enterprises, we help you stand out in the digital world.
+    </div>
+    <div class="about-features">
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <div class="feature-title"><strong>Innovation</strong></div>
+            <div>We embrace the latest technologies to deliver cutting-edge solutions.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <div class="feature-title"><strong>Creativity</strong></div>
+            <div>Our designs are modern, unique, and crafted to impress.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title"><strong>Professionalism</strong></div>
+            <div>We value transparency, reliability, and long-term partnerships.</div>
+        </div>
+    </div>
+</div>
+<style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+            margin: 0;
+            color: #22223b;
+        }
+        .about-container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(60,60,120,0.12);
+            padding: 48px 36px;
+        }
+        .about-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #3a3a7c;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .about-subtitle {
+            font-size: 1.3rem;
+            color: #6c63ff;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 36px;
+        }
+        .about-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .feature-card {
+            flex: 1 1 220px;
+            background: #f3f4fa;
+            border-radius: 12px;
+            padding: 24px 18px;
+            box-shadow: 0 2px 8px rgba(60,60,120,0.06);
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            color: #6c63ff;
+        }
+        @media (max-width: 700px) {
+            .about-container {
+                padding: 24px 8px;
+            }
+            .about-features {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+    </style>
+{% endblock %}
+

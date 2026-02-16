@@ -1,0 +1,17 @@
+course_id,course_name,category,difficulty,description
+1,Python for Beginners,Programming,Beginner,"Learn basic Python with examples."
+2,Advanced Python,Programming,Advanced,"Advanced Python topics including decorators and OOP."
+3,Intro to Data Science,Data Science,Beginner,"Data analysis, visualization, and statistics."
+4,Machine Learning Basics,AI,Intermediate,"Supervised and unsupervised learning."
+5,Web Development,Web Development,Beginner,"HTML, CSS, JavaScript for beginners."
+6,Deep Learning with TensorFlow,AI,Advanced,"Learn to build neural networks using TensorFlow."
+7,React for Frontend Developers,Web Development,Intermediate,"Create responsive web apps using React."
+8,SQL and Databases,Data Science,Beginner,"Understand SQL for data querying and relational databases."
+9,Natural Language Processing,AI,Advanced,"Text preprocessing, sentiment analysis, and NLP models."
+10,Cloud Computing with AWS,Cloud,Intermediate,"Deploy and manage cloud services using AWS."
+11,Cybersecurity Fundamentals,Cybersecurity,Beginner,"Basics of ethical hacking, encryption, and firewalls."
+12,Data Visualization with Tableau,Data Science,Intermediate,"Design interactive dashboards and charts."
+13,DevOps with Docker & Kubernetes,Programming,Advanced,"CI/CD pipelines, Docker containers, Kubernetes clusters."
+14,Java Programming Essentials,Programming,Beginner,"Core Java syntax, OOP, and basic applications."
+15,Mobile App Development with Flutter,Web Development,Intermediate,"Build cross-platform apps using Flutter and Dart."
+

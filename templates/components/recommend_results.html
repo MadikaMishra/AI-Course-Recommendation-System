@@ -1,0 +1,53 @@
+<section class="mt-5" data-aos="fade-up">
+  <h4 class="text-gradient mb-4">🎯 Top Picks For You</h4>
+  <div class="row g-4">
+    {% for course in recommendations %}
+    <div class="col-md-6 col-lg-4">
+      <div class="card course-card-modern border-0 shadow-lg h-100">
+        <div class="course-card-modern-header">
+          <span class="badge bg-gradient-custom2">{{ course.category }}</span>
+          <span class="badge bg-gradient-custom3">{{ course.difficulty }}</span>
+        </div>
+        <div class="course-card-modern-body">
+          <h5 class="card-title fw-bold text-gradient mb-2">{{ course.course_name }}</h5>
+          <p class="card-text text-muted mb-3">{{ course.description or "A top-rated course to boost your skills." }}</p>
+          <div class="d-flex align-items-center justify-content-between w-100 mt-auto">
+            <a href="#" class="btn btn-sm btn-gradient rounded-pill px-4">View Course</a>
+            <span class="iconify ms-2" data-icon="mdi:arrow-right-circle-outline" data-width="28"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<style>
+  /* ===== RECOMMEND RESULTS SECTION ===== */
+.course-card-modern {
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(0,170,255,0.10);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+.course-card-modern-header {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1rem 0 1rem;
+}
+.bg-gradient-custom2 {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+}
+.bg-gradient-custom3 {
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  color: #fff;
+}
+.course-card-modern-body {
+  padding: 1rem 1rem 1.5rem 1rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+</style>

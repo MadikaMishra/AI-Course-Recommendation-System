@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h2 class="fw-bold mb-2 mb-md-0">Available Courses</h2>
+        <form class="d-flex align-items-center gap-2 flex-wrap search-filter-form" method="get" action="{{ url_for('courses') }}" style="max-width: 500px;">
+            <div class="input-group shadow-sm rounded-pill search-group">
+                <span class="input-group-text bg-white border-0 rounded-start-pill px-3">
+                    <i class="bi bi-search text-primary"></i>
+                </span>
+                <input 
+                    class="form-control border-0 rounded-end-pill search-input" 
+                    type="search" 
+                    name="search"
+                    placeholder="Search courses..." 
+                    aria-label="Search"
+                    value="{{ request.args.get('search', '') }}"
+                    style="min-width: 180px; background: #f5f8fa;"
+                >
+            </div>
+            <div class="input-group shadow-sm rounded-pill filter-group">
+                <span class="input-group-text bg-white border-0 rounded-start-pill px-3">
+                    <i class="bi bi-funnel text-success"></i>
+                </span>
+                <select class="form-select border-0 rounded-end-pill filter-select" name="category" style="min-width: 140px; background: #f5f8fa;">
+                    <option value="">All Categories</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat }}" {% if request.args.get('category') == cat %}selected{% endif %}>{{ cat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="btn btn-gradient d-flex align-items-center gap-2 px-4 py-2 shadow-sm" type="submit">
+                <i class="bi bi-arrow-right-circle-fill"></i> <span>Go</span>
+            </button>
+        </form>
+    </div>
+
+    <div class="row g-4">
+        {% for course in courses %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-lg border-0 rounded-4 modern-card p-3">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">{{ course.name }}</h5>
+                    <div class="mb-2">
+                        <span class="badge bg-gradient bg-info text-dark me-1">{{ course.category }}</span>
+                        <span class="badge bg-gradient bg-secondary">{{ course.difficulty }}</span>
+                    </div>
+                    <p class="card-text text-secondary mt-2">{{ course.description }}</p>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-3">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <div class="alert alert-info text-center shadow-sm rounded-4">
+                No courses found matching your criteria.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+    .modern-card {
+        transition: transform .2s, box-shadow .2s;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: #fff;
+    }
+    .modern-card:hover {
+        transform: translateY(-10px) scale(1.035);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+    }
+    .badge.bg-gradient {
+        background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+        color: #222 !important;
+        font-weight: 500;
+    }
+    .btn-outline-primary, .btn-primary {
+        border-radius: 2rem;
+        font-weight: 500;
+        transition: background .2s, color .2s;
+    }
+    .btn-outline-primary:hover, .btn-primary:hover {
+        background: #0d6efd;
+        color: #fff;
+    }
+    .form-select, .form-control {
+        border-radius: 2rem;
+    }
+    .search-filter-form {
+        gap: 1rem !important;
+    }
+    .search-group, .filter-group {
+        background: #f5f8fa;
+        border-radius: 2rem;
+        min-width: 200px;
+        max-width: 250px;
+    }
+    .search-input, .filter-select {
+        background: #f5f8fa !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .btn-gradient {
+        background: linear-gradient(90deg, #0d6efd 0%, #6ea8fe 100%);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(13,110,253,0.08);
+        transition: background .2s, box-shadow .2s;
+    }
+    .btn-gradient:hover {
+        background: linear-gradient(90deg, #0a58ca 0%, #4e7dd1 100%);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(13,110,253,0.13);
+    }
+    .input-group-text {
+        background: #fff !important;
+        border: none !important;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

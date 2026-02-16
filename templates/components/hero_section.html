@@ -1,0 +1,186 @@
+<section class="hero-section-modern d-flex align-items-center justify-content-center text-center py-5 mb-5" data-aos="fade-up">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5 justify-content-center">
+      <div class="col-lg-10 mx-auto">
+        <div class="hero-content-modern glass-card p-5 shadow-lg text-center w-100 position-relative overflow-hidden">
+          <span class="badge badge-modern mb-3 px-4 py-2 fs-5 animate-badge">🚀 New in 2025</span>
+          <h1 class="display-2 fw-bold text-gradient-modern mb-3 animate-title">
+            <span class="d-block">Discover Your</span>
+            <span class="d-block">AI Learning Path</span>
+          </h1>
+          <p class="lead text-muted mb-4 fs-4 animate-desc" style="max-width: 600px; margin: 0 auto;">
+            <span class="highlight-modern">Smarter</span> recommendations, <span class="highlight-modern">faster</span> results.<br>
+            <span class="fw-semibold">No login. No ads. Just pure learning.</span>
+          </p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-4 animate-btns">
+            <a href="#recommenderForm" class="btn btn-modern-gradient btn-lg px-5 py-2 shadow-lg rounded-pill animate-pulse">
+              Start Now
+              <span class="iconify ms-2" data-icon="mdi:arrow-right"></span>
+            </a>
+            <a href="C:\Users\madika mishra\PycharmProjects\FlaskProject\templates\about.html" class="btn btn-outline-gradient btn-lg px-5 py-2 rounded-pill">
+              Learn More
+            </a>
+          </div>
+          <!-- Animated floating shapes -->
+          <div class="hero-animated-shape shape-1"></div>
+          <div class="hero-animated-shape shape-2"></div>
+          <div class="hero-animated-shape shape-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+/* ===== HERO SECTION MODERN ANIMATED ===== */
+.hero-section-modern {
+  background: linear-gradient(120deg, #e0e7ff 0%, #f0faff 50%, #e0f7fa 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.hero-content-modern {
+  border-radius: 2.5rem;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 8px 32px 0 rgba(0,170,255,0.10);
+  border: 1.5px solid rgba(0,170,255,0.08);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.badge-modern {
+  background: linear-gradient(90deg, #00aaff 0%, #005bea 100%);
+  color: #fff;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 8px rgba(0,170,255,0.10);
+  display: inline-block;
+}
+.text-gradient-modern {
+  background: linear-gradient(90deg, #005bea 0%, #00c6fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.btn-modern-gradient {
+  background: linear-gradient(90deg, #00aaff 0%, #005bea 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,170,255,0.15);
+}
+.btn-modern-gradient:hover, .btn-outline-gradient:hover {
+  background: linear-gradient(90deg, #005bea 0%, #00aaff 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+.btn-outline-gradient {
+  border: 2px solid #00aaff;
+  background: #fff;
+  color: #005bea;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-gradient:hover {
+  background: linear-gradient(90deg, #00aaff 0%, #005bea 100%);
+  color: #fff;
+}
+.highlight-modern {
+  color: #005bea;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00aaff 0%, #005bea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-animated-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(2px);
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.shape-1 {
+  width: 120px; height: 120px;
+  top: -40px; left: -60px;
+  background: linear-gradient(135deg, #00aaff 0%, #005bea 100%);
+  animation-name: float1;
+}
+.shape-2 {
+  width: 80px; height: 80px;
+  bottom: -30px; right: -40px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  animation-name: float2;
+}
+.shape-3 {
+  width: 60px; height: 60px;
+  top: 40%; right: -30px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  animation-name: float3;
+}
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(30px) scale(1.1);}
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(-25px) scale(1.08);}
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(20px) scale(1.12);}
+}
+/* Animations for content */
+.animate-title {
+  animation: fadeInUp 1s 0.2s both;
+}
+.animate-desc {
+  animation: fadeInUp 1s 0.5s both;
+}
+.animate-btns {
+  animation: fadeInUp 1s 0.8s both;
+}
+.animate-badge {
+  animation: fadeInDown 1s 0.1s both;
+}
+.animate-pulse {
+  animation: pulseBtn 2s infinite;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes pulseBtn {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,170,255,0.2);}
+  50% { box-shadow: 0 0 0 12px rgba(0,170,255,0.08);}
+}
+@media (max-width: 992px) {
+  .hero-section-modern .row { flex-direction: column-reverse; }
+  .hero-content-modern { align-items: center; }
+}
+@media (max-width: 768px) {
+  .hero-section-modern { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  .hero-content-modern { padding: 1.2rem !important; }
+}
+</style>

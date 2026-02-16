@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home - AI Course Recommender{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0 bg-hero-pattern min-vh-100">
+  {% include 'components/hero_section.html' %}
+  {% include 'components/recommend_form.html' %}
+  {% if recommendations %}
+    {% include 'components/recommend_results.html' %}
+  {% endif %}
+  {% include 'components/steps_section.html' %}
+  {% include 'components/features_section.html' %}
+  {% include 'components/testimonials_section.html' %}
+</div>
+
+<!-- Iconify for modern icons -->
+<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+<!-- AOS & Form Validation Scripts -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const form = document.querySelector("form");
+  const btn = document.querySelector("button[type='submit']");
+  if(form && btn) {
+    form.addEventListener("submit", () => {
+      btn.querySelector(".spinner-border").classList.remove("d-none");
+    });
+  }
+
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+
+  // Testimonial slider logic
+  function showTestimonial(idx) {
+    const items = document.querySelectorAll('.testimonial-item');
+    items.forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+    });
+  }
+</script>
+
+<style>
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .hero-content-modern { border-radius: 1.2rem; }
+  .hero-img-modern { border-radius: 1.2rem; }
+  .step-modern-unique { border-radius: 1.2rem; }
+  .feature-modern-unique { border-radius: 1.2rem; }
+  .testimonial-slider { border-radius: 1.2rem; }
+}
+@media (max-width: 768px) {
+  .hero-section-modern { padding-top: 2rem !important; }
+  .hero-content-modern { padding: 1.2rem !important; }
+  .hero-img-modern { min-height: 180px; max-height: 220px; }
+  .step-modern-unique { min-height: 180px; }
+  .feature-modern-unique { min-height: 140px; }
+}
+</style>
+
+{% endblock %}

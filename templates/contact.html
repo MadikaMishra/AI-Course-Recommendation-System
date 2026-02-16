@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contact Us - E-LearnAI{% endblock %}
+
+{% block content %}
+<!-- Contact Header -->
+<div class="text-center mb-5" data-aos="fade-down">
+  <h2 class="fw-bold text-gradient">📬 Contact Us</h2>
+  <p class="text-muted fs-5">We’d love to hear from you. Please fill out the form below and we’ll get back to you soon.</p>
+</div>
+
+<!-- Contact Form -->
+<div class="row justify-content-center">
+  <div class="col-lg-7 col-md-9">
+    <div class="card shadow-lg border-0" data-aos="fade-up">
+      <div class="card-body p-5">
+        <form method="post" autocomplete="off">
+          <div class="mb-4">
+            <label for="name" class="form-label fw-semibold text-gradient">Your Name</label>
+            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="form-label fw-semibold text-gradient">Your Email</label>
+            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label fw-semibold text-gradient">Your Message</label>
+            <textarea class="form-control form-control-lg" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-gradient btn-lg shadow-sm">Send Message</button>
+          </div>
+        </form>
+        {% if submitted %}
+        <div class="alert alert-success mt-4 text-center" role="alert" data-aos="zoom-in">
+          ✅ Your message has been submitted successfully! We'll respond shortly.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional Contact Info or Map -->
+<div class="text-center mt-5" data-aos="fade-up">
+  <p class="text-muted fs-6">Or email us directly at <a href="mailto:support@elearnai.com" class="text-gradient fw-semibold">support@elearnai.com</a></p>
+</div>
+
+<!-- AOS Animation Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(90deg, #00bfff 0%, #87CEEB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-gradient {
+    background: linear-gradient(90deg, #00bfff 0%, #87CEEB 100%);
+    color: #fff;
+    border: none;
+    transition: box-shadow 0.2s;
+  }
+  .btn-gradient:hover, .btn-gradient:focus {
+    box-shadow: 0 4px 20px rgba(0,191,255,0.15);
+    color: #fff;
+  }
+  .card {
+    border-radius: 1.25rem;
+  }
+  .form-control {
+    background-color: #f8fafc;
+    color: #222;
+    border: 1.5px solid #e0f7fa;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-control:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 8px #00bfff33;
+    background-color: #fff;
+    color: #222;
+  }
+  .form-label {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .alert-success {
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 768px) {
+    .card-body {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
+{% endblock %}
